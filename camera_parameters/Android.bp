@@ -1,0 +1,9 @@
+cc_library_static {
+    name: "libcamera_parameters_mtk",
+    srcs: ["CameraParameters.cpp",
+        "MtkCameraParameters.cpp",
+    ],
+    local_include_dirs: [
+	".",
+    ]
+}

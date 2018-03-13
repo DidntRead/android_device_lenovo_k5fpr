@@ -83,7 +83,7 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 PRODUCT_PACKAGES += \
    libccci_util
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
    android.hardware.wifi@1.0 \
    android.hardware.wifi@1.0-impl \
    android.hardware.wifi@1.0-service \
@@ -100,6 +100,20 @@ PRODUCT_PACKAGES += \
    muxreport \
    terservice
 
+# WiFi
+PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory \
+    android.hardware.wifi@1.0-service \
+    dhcpcd.conf \
+    hostapd \
+    lib_driver_cmd_mt66xx \
+    libwpa_client \
+    wificond \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    muxreport \
+    terservice	
+   
 # Mtk shims
 PRODUCT_PACKAGES += \
    libmtkshim_log \
@@ -128,6 +142,14 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.graphics.mapper@2.0-impl
 
+# Graphics Hals	
+PRODUCT_PACKAGES += \
+    libui_ext \
+	libgralloc_extra \
+	libgui_ext
+	
+    	
+	
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \

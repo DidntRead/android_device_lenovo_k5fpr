@@ -185,10 +185,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
     $(LOCAL_PATH)/rootdir/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc
 
-# TEEI
-PRODUCT_PACKAGES += \
-    teei_daemon
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images \

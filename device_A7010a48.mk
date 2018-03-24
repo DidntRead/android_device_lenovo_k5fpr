@@ -185,6 +185,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
+# Shims
+PRODUCT_PACKAGES += \
+    libmtkshim_gui
+
 # Power
 PRODUCT_PACKAGES += \
     power.default \

@@ -113,11 +113,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     muxreport \
     terservice	
-   
-# Mtk shims
-PRODUCT_PACKAGES += \
-   libmtkshim_log \
-   libmtkshim_audio
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
@@ -187,7 +182,8 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libmtkshim_gui
+    libmtkshim_gui \
+    libmtkshim_audio
 
 # Power
 PRODUCT_PACKAGES += \

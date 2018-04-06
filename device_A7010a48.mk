@@ -165,6 +165,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
     thermal_manager
 
 PRODUCT_COPY_FILES += \

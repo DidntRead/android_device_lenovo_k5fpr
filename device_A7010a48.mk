@@ -100,6 +100,10 @@ PRODUCT_PACKAGES += \
    muxreport \
    terservice
 
+# USB Hal
+PRODUCT_PACKGES += \
+    android.hardware.usb@1.0-service.mtk
+
 # WiFi
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
@@ -140,8 +144,8 @@ PRODUCT_PACKAGES += \
 # Graphics Hals	
 PRODUCT_PACKAGES += \
     libui_ext \
-	libgralloc_extra \
-	libgui_ext
+    libgralloc_extra \
+    libgui_ext
 	
     	
 	
@@ -161,6 +165,7 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service \
     thermal_manager
 
 PRODUCT_COPY_FILES += \
@@ -184,7 +189,8 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libmtkshim_gui \
-    libmtkshim_audio
+    libmtkshim_audio \
+    libmtkshim_camera
 
 # Power
 PRODUCT_PACKAGES += \
@@ -217,12 +223,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
-    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml
-
-# Default OMX service to non-Treble
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.media.treble_omx=false
+    $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
@@ -235,11 +237,11 @@ PRODUCT_PACKAGES += \
 
 # GNSS HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
 
 # GPS library
 PRODUCT_PACKAGES += \
-    gps.mt6753 \
     libcurl
 
 PRODUCT_COPY_FILES += \
@@ -335,10 +337,10 @@ PRODUCT_PACKAGES += \
     libfs_mgr
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
-    $(LOCAL_PATH)/configs/audio/audio_effects.xml:system/etc/audio_effects.xml \
-    $(LOCAL_PATH)/configs/audio/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
+    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 #Custom charger images
 PRODUCT_COPY_FILES += \

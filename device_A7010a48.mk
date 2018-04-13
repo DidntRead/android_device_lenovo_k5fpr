@@ -163,7 +163,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service \
-    thermal_manager
+    thermal_manager \
+    thermal.mt6753
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal/ht120.mtc:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/.ht120.mtc \
@@ -266,7 +267,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcamera_parameters_mtk \
     libcam.client \
-    libcam.utils.sensorlistener \
     libmmsdkservice.feature \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
@@ -294,9 +294,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbt-vendor \
-    android.hardware.bluetooth@1.0-service \
-    android.hardware.bluetooth@1.0-impl
+    android.hardware.bluetooth@1.0-service.mtk
 
 # ANT
 $(call inherit-product-if-exists, external/ant-wireless/build/ant-wireless.mk)

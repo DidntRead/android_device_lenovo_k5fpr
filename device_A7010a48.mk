@@ -39,6 +39,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
@@ -80,13 +81,11 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 PRODUCT_PACKAGES += \
    libccci_util
 
-#PRODUCT_PACKAGES += \
+# Wifi
+PRODUCT_PACKAGES += \
    android.hardware.wifi@1.0 \
    android.hardware.wifi@1.0-impl \
    android.hardware.wifi@1.0-service \
-   librs_jni \
-   com.android.future.usb.accessory \
-   libwpa_client \
    lib_driver_cmd_mt66xx \
    libwifi-hal-mt66xx \
    hostapd \
@@ -101,20 +100,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKGES += \
     android.hardware.usb@1.0-service.mtk
 
-# WiFi
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory \
-    android.hardware.wifi@1.0-service \
-    dhcpcd.conf \
-    hostapd \
-    lib_driver_cmd_mt66xx \
-    libwpa_client \
-    wificond \
-    wpa_supplicant \
-    wpa_supplicant.conf \
-    muxreport \
-    terservice	
-
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # Mediatek
@@ -123,7 +108,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl
+     android.hardware.drm@1.0-impl \
+     android.hardware.drm@1.0-service
 
 # RenderScript
 PRODUCT_PACKAGES += \
@@ -138,14 +124,13 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.graphics.mapper@2.0-impl
 
-# Graphics Hals	
 PRODUCT_PACKAGES += \
     libui_ext \
     libgralloc_extra \
     libgui_ext
-	
-    	
-	
+
+
+# Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
@@ -264,6 +249,7 @@ PRODUCT_PACKAGES += \
     libion \
     WallpaperPicker
 
+# Camera
 PRODUCT_PACKAGES += \
     libcamera_parameters_mtk \
     libcam.client \
@@ -281,8 +267,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    fingerprint.mt6753 \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.biometrics.fingerprint@2.0-service
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -295,13 +280,6 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service.mtk
-
-# ANT
-$(call inherit-product-if-exists, external/ant-wireless/build/ant-wireless.mk)
-
-PRODUCT_PACKAGES += \
-    ANT_RAM_CODE_E1.BIN \
-    ANT_RAM_CODE_E2.BIN \
 
 # Audio
 PRODUCT_PACKAGES += \

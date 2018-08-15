@@ -13,9 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
 # Inherit from A7010 device
 $(call inherit-product, device/lenovo/A7010a48/device_A7010a48.mk)
 

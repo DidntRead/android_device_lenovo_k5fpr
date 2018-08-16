@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Inherit from A7010 device
-$(call inherit-product, device/lenovo/A7010a48/device_A7010a48.mk)
+$(call inherit-product, device/lenovo/k5fpr/device_k5fpr.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/dot/config/common.mk)
@@ -26,12 +26,12 @@ TARGET_BOOTANIMATION_HALF_RES := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-lenovo
 
-PRODUCT_DEVICE := A7010a48
-PRODUCT_NAME := dot_A7010a48
+PRODUCT_DEVICE := k5fpr
+PRODUCT_NAME := dot_k5fpr
 PRODUCT_BRAND := Lenovo
 PRODUCT_MANUFACTURER := Lenovo
 PRODUCT_MODEL := Lenovo A7010a48
-PRODUCT_RELEASE_NAME := A7010a48
+PRODUCT_RELEASE_NAME := k5fpr
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=k5fpr \

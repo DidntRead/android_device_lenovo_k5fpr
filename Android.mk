@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifeq ($(TARGET_DEVICE),A7010a48)
+ifeq ($(TARGET_DEVICE),k5fpr)
 
 LOCAL_PATH := $(call my-dir)
 

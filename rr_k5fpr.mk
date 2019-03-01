@@ -16,13 +16,13 @@
 # Inherit from A7010 device
 $(call inherit-product, device/lenovo/k5fpr/device_k5fpr.mk)
 
-# Inherit some common LOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common RR stuff.
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
 PRODUCT_GMS_CLIENTID_BASE := android-lenovo
 
 PRODUCT_DEVICE := k5fpr
-PRODUCT_NAME := lineage_k5fpr
+PRODUCT_NAME := rr_k5fpr
 PRODUCT_BRAND := Lenovo
 PRODUCT_MANUFACTURER := Lenovo
 PRODUCT_MODEL := Lenovo A7010a48

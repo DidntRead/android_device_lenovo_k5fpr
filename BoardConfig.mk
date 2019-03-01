@@ -21,14 +21,13 @@ LOCAL_PATH := device/lenovo/k5fpr
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Inherit common boardconfig
--include device/lenovo/mt6753-common/BoardConfigCommon.mk
+include device/lenovo/mt6753-common/BoardConfigCommon.mk
 
 #######################################################################
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/lenovo/k5fpr
 TARGET_KERNEL_CONFIG := k5fpr_defconfig
-BOARD_NAME := A7010
 
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := A7010a48,LENOVO,k5fpr,a7010a48

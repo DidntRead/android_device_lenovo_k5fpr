@@ -16,4 +16,4 @@ Rear Camera  | 13MP , Dual LED Flash!
 Front Camera | 5MP 
 
 
-This branch is for building ResurrectionRemix 7 (or Android Pie 8.0 AOSP based roms) ROM.
+This branch is for building ResurrectionRemix 7 (or Android Pie 9.0 AOSP based roms) ROM.
